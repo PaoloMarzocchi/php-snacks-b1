@@ -35,16 +35,9 @@ $matches = [
     ]
     ];
 
-    foreach ($matches as $match) {
-        $homeTeam = $match['home_team'];
-        $awayTeam = $match['away_team'];
-        
-        //var_dump($homeTeam['name']);
-        echo $homeTeam['name'] .' - '. $awayTeam['name'] .' | '. $homeTeam['score'] .' - '. $awayTeam['score'] .'<br>';
-    }
-
+    
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -53,7 +46,16 @@ $matches = [
 </head>
 <body>
     <ul>
-        <li></li>
+        <?php
+        foreach ($matches as $match) {
+            $homeTeam = $match['home_team'];
+            $awayTeam = $match['away_team'];
+            
+            //var_dump($homeTeam['name']);
+            echo '<li>'.$homeTeam['name'] .' - '. $awayTeam['name'] .' | '. $homeTeam['score'] .' - '. $awayTeam['score'] .'</li>';
+        }
+    
+        ?>
     </ul>
 </body>
-</html> -->
+</html>
